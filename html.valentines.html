@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine's Day Special</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe0f0;
+            background-image: url('https://www.example.com/roses-background.jpg'); /* Replace with your roses background image URL */
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: #f06292;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #e91e63;
+        }
+
+        .hidden { display: none; }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Added a max-width for better layout on larger screens */
+        }
+
+        h1 {
+            color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content" id="askPage">
+    <h1>Will you be my Valentine?</h1>
+    <button onclick="showDiningOptions()">Yes</button>
+    <button onclick="alert('Please reconsider!')">No</button>
+    <iframe src="https://giphy.com/embed/HgycnYQCMeJXO" width="300" height="372" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sky-hello-clouds-HgycnYQCMeJXO">via GIPHY</a></p>
+</div>
+
+<div class="content hidden" id="diningOptionsPage">
+    <h1>Where should we go eat?</h1>
+    <button onclick="showDessertsOptions('Five Below')">Panera</button>
+    <button onclick="showDessertsOptions('Movie Theater')">Chipotle</button>
+    <button onclick="showDessertsOptions('Walmart')">Whatever you want ❤️ </button>
+    <iframe src="https://giphy.com/embed/3o7aDf1KA0bLkKfMgU" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sandiegozoo-happy-3o7aDf1KA0bLkKfMgU">via GIPHY</a></p>
+</div>
+
+<div class="content hidden" id="dessertsOptionsPage">
+    <h1>Choose your dessert:</h1>
+    <button onclick="showThankYouPage('Crumble Cookies')">Crumble Cookies</button>
+    <button onclick="showThankYouPage('Class 302')">Class 302</button>
+    <button onclick="showThankYouPage('Candy Shop')">Candy Shop</button>
+    <iframe src="https://giphy.com/embed/xTiTneqqVimALdrOh2" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/monkey-ice-cream-licking-xTiTneqqVimALdrOh2">via GIPHY</a></p>
+
+</div>
+
+<div class="content hidden" id="thankYouPage">
+    <h1>Thank you for being my Valentine!</h1>
+    <p>I LOVE YOU SO MUCH MY BEAUTIFUL BABYYYY YOUR MY AMAZING WIFE AND I LOVE YOU WITH MY ENTIRE HEART I HOPE THIS VALENTINES IS SO SPECICAL YOUR MY BABY AND I LOVE YOU FOREVER AND ALWAYS MY BABY! ❤️❤️❤️.</p>
+    <iframe src="https://giphy.com/embed/i1ifSvtaxp4YSWX4o4" width="150" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/love-you-heart-red-rose-i1ifSvtaxp4YSWX4o4">via GIPHY</a></p>
+</div>
+
+<script>
+    function showDiningOptions() {
+        document.getElementById('askPage').classList.add('hidden');
+        document.getElementById('diningOptionsPage').classList.remove('hidden');
+    }
+
+    function showDessertsOptions(place) {
+        console.log(place); // Useful for tracking the choice
+        document.getElementById('diningOptionsPage').classList.add('hidden');
+        document.getElementById('dessertsOptionsPage').classList.remove('hidden');
+    }
+
+    function showThankYouPage(dessert) {
+        console.log(dessert); // Useful for tracking the choice
+        document.getElementById('dessertsOptionsPage').classList.add('hidden');
+        document.getElementById('thankYouPage').classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
